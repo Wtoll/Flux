@@ -1,0 +1,21 @@
+{% macro title(page) %}
+    {% if page.title %}<heading>{{ page.title }}</heading>{% endif %}
+{% endmacro title %}
+
+{% macro description(page) %}
+    {% if page.description %}<p class="description">{{ page.description }}</p>{% endif %}
+{% endmacro description %}
+
+{% macro date(page) %}
+    {% if page.date %}<time datetime="{{ page.date }}">{{ page.date | date(format=config.extra.date_format) }}</time>{% endif %}
+{% endmacro date %}
+
+{% macro author(page) %}
+    {% if page.extra.author %}<address>{{ page.extra.author }}</address>{% elif config.extra.author %}<address>{{ config.extra.author }}</address>{% endif %}
+{% endmacro author %}
+
+{% macro reading_time(page) %}
+    <p class="reading_time">{{ page.reading_time }} min{% if page.reading_time != 1 %}s{% endif %}</p>
+{% endmacro reading_time %}
+
+

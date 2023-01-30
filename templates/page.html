@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% import "macros.html" as macros %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock title %}
+
+{% block head %}
+    {{ super() }}
+{% endblock head %}
+
+{% block main %}
+    <article>
+        <header>
+            {{ macros::title(page=page) }}
+            {{ macros::description(page=page) }}
+            {{ macros::date(page=page) }}
+            {{ macros::author(page=page) }}
+            {{ macros::reading_time(page=page) }}
+        </header>
+        <hr />
+        <section class="content">
+            {{ page.content | safe }}
+        </section>
+    </article>
+{% endblock main %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <title>{% block title %}{{ config.title }}{% endblock %}</title>
+            <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/latest/normalize.css"/>
+            <link rel="stylesheet" type="text/css" href="{{ get_url(path="main.css", trailing_slash=false, cachebust=true) }}"/>
+        {% endblock %}
+    </head>
+    <body>
+        {% include "header.html" %}
+        <main class="constrainer">
+            {% block main %}
+            {% endblock %}
+        </main>
+        {% include "footer.html" %}
+    </body>
+</html>

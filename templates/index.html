@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% import "macros.html" as macros %}
+
+{% block main %}
+    {% for page in section.pages %}
+        <article class="entry">
+            <header>
+                {{ macros::title(page=page) }}
+                {{ macros::description(page=page) }}
+            </header>
+            {% if page.summary %}
+                <hr />
+                <div class="summary">
+                    {{ page.summary | safe }}
+                </div>
+                <a href="{{ page.permalink }}#continue-reading">Continue Reading →</a>
+            {% else %}
+                <a href="{{ page.permalink }}">Read →</a>
+            {% endif %}
+        </article>
+        {% if not loop.last %}
+            <hr />
+        {% endif %}
+    {% endfor %}
+{% endblock %}

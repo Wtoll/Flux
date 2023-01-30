@@ -1,0 +1,12 @@
+name = "Flux"
+description = "An intentionally written and minimally styled theme for Zola"
+license = "MIT"
+homepage = "https://github.com/Wtoll/Flux"
+min_version = "0.4.0"
+
+[extra]
+date_format = "%e %B '%y"
+
+[author]
+name = "Will Toll"
+homepage = "https://wtoll.com"
