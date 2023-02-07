@@ -10,25 +10,29 @@ heading
     margin: 0.67em 0;
     display: block;
 
-p, a, time, address, ul, li
+p, a, time, address, ul, li, td, sup
     font-family: "Outfit", sans-serif;
 
+.footnote-definition > *
+    display: inline
+    
 hr
     border: 1px solid Gainsboro;
     margin: 20px 0;
 
 a
-    color: black;
+    color: DarkSlateBlue;
     text-decoration: none;
     transition: color 0.25s;
     &:hover
         cursor: pointer;
-        color: blue;
+        color: MediumSlateblue;
 
 code
     background: Gainsboro;
-    padding: 5px;
+    padding: 3px 5px;
     border-radius: 5px;
+    display: inline-block;
 
 pre
     background: Gainsboro;
@@ -47,13 +51,19 @@ pre
 
 article > header
     > *
-        margin: 0px;
+        margin: 10px 0px;
     > heading
         font-size: 2.5em;
+    > div.extras
+        display: flex;
+        > *
+            margin: 0px;
+        > :not(:first-child)::before
+            content: "•"
+            margin: 0px 5px;
 
 body > header
     padding: 20px 0;
 
 article.entry > a
     display: inline-block;
-    margin: 5px 0 0 0;

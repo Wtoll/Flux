@@ -6,3 +6,4 @@ build_search_index = false
 highlight_code = true
 
 [extra]
+date_format = "%e %B '%y"

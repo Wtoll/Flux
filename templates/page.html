@@ -13,9 +13,11 @@
         <header>
             {{ macros::title(page=page) }}
             {{ macros::description(page=page) }}
-            {{ macros::date(page=page) }}
-            {{ macros::author(page=page) }}
-            {{ macros::reading_time(page=page) }}
+            <div class="extras">
+                {{ macros::date(page=page) }}
+                {{ macros::author(page=page) }}
+                {{ macros::reading_time(page=page) }}
+            </div>
         </header>
         <hr />
         <section class="content">
